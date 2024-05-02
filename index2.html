@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Cybersécurité</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative; /* Ajout pour positionner le logo */
+    }
+    .logo {
+      position: absolute;
+      left: 10px; /* Ajuste la position horizontale */
+      max-width: 120px; /* Limite la taille du logo */
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      position: relative; /* Pour le positionnement du soulignement */
+      transition: all 0.3s ease; /* Transition smooth */
+      font-size: 16px; /* Ajuste la taille du texte */
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; /* Position du soulignement */
+      left: 0;
+      width: 100%;
+      height: 2px; /* Hauteur du soulignement */
+      background-color: transparent;
+      transition: all 0.3s ease; /* Transition smooth */
+    }
+    nav a:hover::after {
+      background-color: #fff; /* Couleur du soulignement au survol */
+    }
+    .profile {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    .profile img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 45px;
+    }
+    .profile-name {
+      position: absolute;
+      top: 85%; /* Déplace le texte à mi-chemin verticalement */
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centre le texte horizontalement et verticalement */
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .companies {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .companies img {
+      width: 100px;
+      margin: 0 20px;
+    }
+    .separator {
+      margin: 50px auto;
+      text-align: center;
+      position: relative;
+    }
+    .separator::before {
+      content: "";
+      display: block;
+      margin: 50px auto; /* Espacement égal en haut et en bas */
+      width: 400px; /* Longueur de la barre */
+      border-bottom: 1px solid #ccc; /* Couleur gris normal */
+      border-radius: 5px;
+    }
+    .separator-text {
+      display: block;
+      margin-top: 50px; /* Ajuste l'espacement en haut */
+      margin-bottom: 50px; /* Ajoute un espacement en bas */
+      font-weight: bold;
+      color: #ccc;
+      font-size: 20px; /* Augmente la taille du texte */
+    }
+    .recent-posts {
+      margin-top: 50px;
+      display: flex;
+      flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+      justify-content: center; /* Centre les éléments horizontalement */
+    }
+    .post {
+      margin-bottom: 20px;
+      width: 300px; /* Largeur fixe pour chaque élément */
+      margin-right: 20px; /* Espacement entre les éléments */
+    }
+    .post img {
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 10px; /* Espacement entre l'image et le titre */
+    }
+    .post-content {
+      text-align: center;
+    }
+    .post h3 {
+      margin: 0;
+    }
+
+    /* Nouveau style pour les boutons de réseaux sociaux */
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-bottom: 20px;
+    }
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-button {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-button:hover {
+      cursor: pointer;
+    }
+    .social-button img {
+      width: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <img src="https://i.ibb.co/41nLSqL/image.png" alt="Logo" class="logo">
+      </a>
+      <a href="#">Accueil</a>
+      <a href="#">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="profile">
+      <img src="https://i.ibb.co/kSQNKWX/image.png" alt="Image de profil">
+      <span class="profile-name">QueenArisu</span>
+      <p><b>Hacker | Pentester | Bug Hunter | Cybersecurity Lover</b></p>
+    </div>
+
+    <div class="separator">
+      <span class="separator-text"><h2>Companies I've Hacked</h2></span>
+    </div>
+
+    <div class="companies">
+      <div class="scrolling-companies">
+        <img src="https://www.23andme.com/_next/static/media/black-bg-logo.d18432f2.png" alt="Logo entreprise 1">
+        <img src="https://i.ibb.co/NCgGCTS/y-Tkrbk-Kgc.png" alt="Logo entreprise 2">
+        <img src="https://pbs.twimg.com/profile_images/1642530601428484096/8m24k5Xy_400x400.jpg" alt="Logo entreprise 3">
+        <!-- Ajoutez d'autres logos ici -->
+      </div>
+    </div>
+
+    <div class="separator">
+      <span class="separator-text"><h2>Articles Récents</h2></span>
+    </div>
+
+    <div class="recent-posts">
+      <div class="post">
+        <img src="https://www.signalsciences.com/wp-content/uploads/2020/09/blog-cluster-account-takeover-ato-social-1200x628-1.png" alt="Image article 1">
+        <div class="post-content">
+          <h3>API Misconfiguration lead to ATO</h3>
+        </div>
+      </div>
+      <div class="post">
+        <img src="https://cybelangel.com/wp-content/uploads/2020/07/pii-leaks_cybelangel.png" alt="Image article 2">
+        <div class="post-content">
+          <h3>How i found PII Leak in 20 minutes ?</h3>
+        </div>
+      </div>
+      <!-- Ajoutez d'autres articles ici -->
+    </div>
+
+    <!-- Footer avec les boutons de réseaux sociaux -->
+    <div class="footer">
+      <div class="social-buttons">
+        <a href="https://twitter.com" class="social-button" target="_blank">
+          <img src="https://img.freepik.com/vecteurs-libre/nouveau-logo-twitter-2023-x-fond-blanc-vecteur_1017-45422.jpg?w=740&t=st=1714590184~exp=1714590784~hmac=3c1d3a3eef87c65924dd78c096a88d462437fa169f529e8f5dbccdfa364e859f" alt="Twitter">
+        </a>
+        <a href="https://github.com" class="social-button" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+        </a>
+        <a href="https://instagram.com" class="social-button" target="_blank">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDqcGY_FSfARMiIG2B61s1CIq0qkGshc7eckuMGtQvw&s" alt="Instagram">
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
