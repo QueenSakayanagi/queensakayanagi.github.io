@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Cybersécurité</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    @font-face {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 400;
+      src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative; /* Ajout pour positionner le logo */
+    }
+    .logo {
+      position: absolute;
+      left: 10px; /* Ajuste la position horizontale */
+      max-width: 120px; /* Limite la taille du logo */
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      position: relative; /* Pour le positionnement du soulignement */
+      transition: all 0.3s ease; /* Transition smooth */
+      font-size: 16px; /* Ajuste la taille du texte */
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; /* Position du soulignement */
+      left: 0;
+      width: 100%;
+      height: 2px; /* Hauteur du soulignement */
+      background-color: transparent;
+      transition: all 0.3s ease; /* Transition smooth */
+    }
+    nav a:hover::after {
+      background-color: #fff; /* Couleur du soulignement au survol */
+    }
+    .blog-posts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    .post {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+    .post img {
+      width: 300px;
+      max-width: 100%;
+      margin-right: 20px;
+      margin-top: 40px; /* Augmenter la marge supérieure */
+    }
+    .post-content {
+      flex: 1;
+    }
+    .post h3 {
+      margin-top: 0;
+    }
+    .post p {
+      margin-bottom: 0;
+    }
+    /* Nouveau style pour les boutons de réseaux sociaux */
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      padding-bottom: 20px;
+    }
+    .social-buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-button {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin: 0 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .social-button:hover {
+      cursor: pointer;
+    }
+    .social-button img {
+      width: 30px;
+    }
+    .pagination {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .pagination button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: #fff;
+      margin: 0 10px;
+    }
+
+    .pagination button:hover {
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <img src="https://i.ibb.co/41nLSqL/image.png" alt="Logo" class="logo">
+      </a>
+      <a href="#">Accueil</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="blog-posts" id="blog-posts">
+      <!-- Les articles seront chargés ici par JavaScript -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button onclick="previousPage()">&#9664;</button>
+      <button onclick="nextPage()">&#9654;</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="social-buttons">
+      <a href="https://twitter.com" class="social-button" target="_blank">
+        <img src="https://img.freepik.com/vecteurs-libre/nouveau-logo-twitter-2023-x-fond-blanc-vecteur_1017-45422.jpg?w=740&t=st=1714590184~exp=1714590784~hmac=3c1d3a3eef87c65924dd78c096a88d462437fa169f529e8f5dbccdfa364e859f" alt="Twitter">
+      </a>
+      <a href="https://github.com" class="social-button" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+      </a>
+      <a href="https://instagram.com" class="social-button" target="_blank">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDqcGY_FSfARMiIG2B61s1CIq0qkGshc7eckuMGtQvw&s" alt="Instagram">
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const articles = [
+      { 
+        title: "API Misconfiguration lead to ATO", 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut imperdiet arcu.",
+        image: "https://www.signalsciences.com/wp-content/uploads/2020/09/blog-cluster-account-takeover-ato-social-1200x628-1.png"
+      },
+      { 
+        title: "How i found PII Leak in 20 minutes ?", 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut imperdiet arcu.",
+        image: "https://cybelangel.com/wp-content/uploads/2020/07/pii-leaks_cybelangel.png"
+      },
+      { 
+        title: "How i fioejoiiojd PII Leak in 20 minutes ?", 
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut imperdiet arcu.",
+        image: "https://cybelangel.com/wp-content/uploads/2020/07/pii-leaks_cybelangel.png"
+      }
+      // Ajoutez d'autres articles avec leurs titres, descriptions et images
+    ];
+
+    const perPage = 2; // Nombre d'articles par page
+    const blogPostsContainer = document.getElementById('blog-posts');
+    const paginationContainer = document.querySelector('.pagination');
+
+    let currentPage = 1;
+
+    // Fonction pour afficher les articles sur une page donnée
+    function displayPage(pageNumber) {
+      blogPostsContainer.innerHTML = ''; // Efface le contenu précédent
+
+      const startIndex = (pageNumber - 1) * perPage;
+      const endIndex = startIndex + perPage;
+      const articlesToShow = articles.slice(startIndex, endIndex);
+
+      articlesToShow.forEach(article => {
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('post');
+        articleElement.innerHTML = `
+          <img src="${article.image}" alt="Image de l'article">
+          <div class="post-content">
+            <h3><a href="${generateURL(article.title)}">${article.title}</a></h3>
+            <p>${article.content}</p>
+          </div>
+        `;
+        blogPostsContainer.appendChild(articleElement);
+      });
+    }
+
+    // Fonction pour générer l'URL de l'article à partir de son titre
+    function generateURL(title) {
+      return title.toLowerCase().replace(/ /g, '-');
+    }
+
+    // Affiche la première page par défaut
+    displayPage(currentPage);
+
+    // Fonction pour passer à la page précédente
+    function previousPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        displayPage(currentPage);
+      }
+    }
+
+    // Fonction pour passer à la page suivante
+    function nextPage() {
+      const maxPage = Math.ceil(articles.length / perPage);
+      if (currentPage < maxPage) {
+        currentPage++;
+        displayPage(currentPage);
+      }
+    }
+  </script>
+</body>
+</html>
